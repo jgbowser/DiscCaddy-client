@@ -39,11 +39,16 @@ export default class LoginForm extends React.Component {
   }
 
   render() {
+    const { error } = this.state
     return (
       <form 
         className='LoginForm__form'
         onSubmit={this.handleSubmitJwtAuth}
       >
+
+        <div role='alert'>
+          {error && <p className='red'>{error.message}</p>}
+        </div>
 
         <label htmlFor='LoginForm__username'>
           User name 

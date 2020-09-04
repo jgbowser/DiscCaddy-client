@@ -10,24 +10,26 @@ class App extends React.Component {
   render(){
     return (
       <div className='App'>
-        <Switch>
-          <Route 
-            exact 
-            path={'/'} 
-            component={LandingPage} 
-          />
-          <Route
-            path={'/login'}
-            component={LoginPage} 
-          />
-          <Route
-          path={'/home'}
-          component={HomeScreen} 
-          />
-          <Route
-          path={'/register'}
-          component={RegistrationPage} />
-        </Switch>
+        <main className='App__main'>
+          <Switch>
+            <Route 
+              exact 
+              path={'/'} 
+              component={LandingPage} 
+            />
+            <Route
+              path={'/login'}
+              component={LoginPage} 
+            />
+            <Route
+            path={'/home'}
+            component={HomeScreen} 
+            />
+            <Route
+            path={'/register'}
+            component={RegistrationPage} />
+          </Switch>
+        </main>
       </div>
     )
   }
