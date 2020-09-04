@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
+import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import HomeScreen from '../../routes/HomeScreen/HomeScreen'
 import './App.css'
 
@@ -23,6 +24,9 @@ class App extends React.Component {
           path={'/home'}
           component={HomeScreen} 
           />
+          <Route
+          path={'/register'}
+          component={RegistrationPage} />
         </Switch>
       </div>
     )
