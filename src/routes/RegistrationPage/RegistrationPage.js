@@ -3,9 +3,6 @@ import RegistrationForm from '../../components/RegistrationForm/RegistrationForm
 import './RegistrationPage.css'
 
 export default class RegistrationPage extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   handleRegistrationSuccess = () => {
     this.props.history.push('/login')
