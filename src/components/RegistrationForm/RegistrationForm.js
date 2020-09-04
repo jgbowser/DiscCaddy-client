@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthApiService from '../../services/auth-api-service'
 import './RegistrationForm.css'
 
 export default class RegistrationForm extends React.Component {
@@ -6,14 +7,46 @@ export default class RegistrationForm extends React.Component {
     super(props)
     this.state = {
       error: null,
-      repeatPasswordError: null,
-      buttonDisabled: true,
       first_name: '',
       last_name: '',
       email: '',
       username: '',
       password: '',
       repeat_password: ''
+    }
+  }
+
+  handleSubmitNewUser = event => {
+    event.preventDefault()
+    this.setState({ error: null })
+
+    const passwordsMatch = this.validateRepeatPassword()
+
+    if(!passwordsMatch) {
+      this.setState({ error: { message: 'Passwords don\'t match' }})
+    } else {
+      AuthApiService.postNewUser({
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        email: this.state.email,
+        username: this.state.username,
+        password: this.state.password,
+        repeat_password: this.state.repeat_password
+      })
+      .then(res =>{
+        this.setState({
+          first_name: '',
+        last_name: '',
+        email: '',
+        username: '',
+        password: '',
+        repeat_password: ''
+        })
+        this.props.onRegistrationSuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
     }
   }
 
@@ -41,10 +74,18 @@ export default class RegistrationForm extends React.Component {
     this.setState({ repeat_password: event.target.value })
   }
 
+  validateRepeatPassword = () => {
+    const { password, repeat_password } = this.state
+    if(password !== repeat_password) {
+      return false
+    } else {
+      return true
+    }
+  }
+
   render() {
     const { 
       error,
-      repeatPasswordError,
       first_name,
       last_name,
       email,
@@ -56,7 +97,10 @@ export default class RegistrationForm extends React.Component {
     return (
 
       /* Consider refactoring the labels and inputs into components */
-      <form className='RegistrationForm__form'>
+      <form 
+        className='RegistrationForm__form'
+        onSubmit={this.handleSubmitNewUser}
+      >
        
         <div role='alert'>
           {error && <p className='red'>{error.message}</p>}
@@ -133,7 +177,6 @@ export default class RegistrationForm extends React.Component {
           onChange={this.handleRepeatPasswordChange}
           required 
         />
-        {repeatPasswordError && <p className='red'>{repeatPasswordError}</p>}
          
         <button type='submit'>Create your account</button>
       </form>
