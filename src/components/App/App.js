@@ -5,9 +5,20 @@ import Header from '../../routes/Header/Header'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import HomeScreen from '../../routes/HomeScreen/HomeScreen'
+import BagPage from '../../routes/BagPage/BagPage'
 import './App.css'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state ={
+      error: null,
+      discs: [],
+      userBag: [],
+      scorecards: []
+    }
+  }
+
   render(){
     return (
       <div className='App'>
@@ -28,13 +39,18 @@ class App extends React.Component {
               path={'/login'}
               component={LoginPage} 
             />
+              <Route
+                path={'/register'}
+                component={RegistrationPage} 
+              />
             <Route
-            path={'/home'}
-            component={HomeScreen} 
+              path={'/home'}
+              component={HomeScreen} 
             />
             <Route
-            path={'/register'}
-            component={RegistrationPage} />
+              path={'/my-bag'}
+              component={BagPage} 
+            />
           </Switch>
         </main>
       </div>
