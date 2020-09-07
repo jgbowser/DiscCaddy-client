@@ -1,4 +1,5 @@
 import React from 'react'
+import NewDiscForm from '../../components/NewDiscForm/NewDiscForm'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
 import DiscApiService from '../../services/disc-api-service'
 import './BagPage.css'
@@ -21,31 +22,33 @@ export default class BagPage extends React.Component {
     
   }
 
+  handleSubmit = (event, value) => { 
+    event.preventDefault()
+    const valueAsNumber = Number(value)
+    DiscApiService.postUserDisc(valueAsNumber)
+      .then(this.context.setNewDisc)
+      
+    
+  }
+
   makeDiscOptions = discs => {
     return discs.map(disc => 
-    <option value={disc.id} key={disc.id}>{disc.brand} {disc.name}</option>
+      <option value={disc.id} key={disc.id}>{disc.brand} {disc.name}</option>
     )
   }
 
-  makeUserDiscs = userDiscs => {
-    return userDiscs.map(disc => <p>{disc.name}</p>)
-  }
-
   render() {
-    const { discs = [], userBag = [] } = this.context
+    const { discs = [], userBag = [], error } = this.context
     const discOptions = this.makeDiscOptions(discs)
-    const userBagDiscs = this.makeUserDiscs(userBag)
     return (
       <section className='BagPage'>
         <h2>My Bag</h2>
-        <form className='BagPage__add_disc_form'>
-          <label htmlFor='BagPage__disc_select'>Add a disc to your bag</label>
-          <select id='BagPage__disc_select'>
-            <option selected disabled>Select a disc</option>
-            {discOptions}
-          </select>
-        </form>
-        {userBagDiscs}
+        {error && <p className='red'>{error.message}</p>}
+        <NewDiscForm 
+          onSubmitNewDisc={this.handleSubmit}
+        >
+          {discOptions}
+        </NewDiscForm>
 
       </section>
     )

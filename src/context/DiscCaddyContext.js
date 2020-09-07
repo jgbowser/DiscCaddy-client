@@ -9,6 +9,7 @@ const DiscCaddyContext = React.createContext({
   clearError: () => {},
   setDiscs: () => {},
   setUserBag: () => {},
+  setNewDisc: () => {},
   setScorecards: () => {},
 })
 

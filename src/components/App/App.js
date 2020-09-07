@@ -20,7 +20,7 @@ class App extends React.Component {
     }
   }
 
-  setError = (error) => {
+  setError = error => {
     this.setState({ error })
   }
 
@@ -32,8 +32,14 @@ class App extends React.Component {
     this.setState({ discs })
   }
 
-  setUserBag = (userBag) => {
-    return this.setState({ userBag })
+  setUserBag = userBag => {
+    this.setState({ userBag })
+  }
+
+  setNewDisc = newDisc => {
+    this.setState({
+      userBag:  [...this.state.userBag, newDisc]
+    })
   }
 
   setScorecards = () => {}
@@ -48,6 +54,7 @@ class App extends React.Component {
       clearError: this.clearError,
       setDiscs: this.setDiscs,
       setUserBag: this.setUserBag,
+      setNewDisc: this.setNewDisc,
       setScorecards: this.setScorecards,
     }
     return (
