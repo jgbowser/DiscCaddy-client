@@ -20,7 +20,9 @@ class App extends React.Component {
     }
   }
 
-  setError = () => {}
+  setError = (error) => {
+    this.setState({ error })
+  }
 
   clearError = () => {
     this.setState({ error: null })
@@ -31,7 +33,7 @@ class App extends React.Component {
   }
 
   setUserBag = (userBag) => {
-    this.setState({ userBag })
+    return this.setState({ userBag })
   }
 
   setScorecards = () => {}

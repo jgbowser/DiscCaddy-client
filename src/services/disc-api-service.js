@@ -9,7 +9,7 @@ const DiscApiService ={
       }
     })
       .then(res => {
-        (!res.ok)
+        return (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       })
@@ -22,9 +22,9 @@ const DiscApiService ={
       }
     })
       .then(res => {
-        (!res.ok)
+        return (!res.ok)
           ? res.json().then(e => Promise.reject(e))
-          :res.json()
+          :res.json()//.then(data => console.log('fetch complete', data))
       })
   },
 }
