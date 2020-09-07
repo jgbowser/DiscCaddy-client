@@ -7,12 +7,6 @@ import './BagPage.css'
 
 
 export default class BagPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      hasError: false,
-    }
-  }
   
   static contextType = DiscCaddyContext
 

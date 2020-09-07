@@ -7,6 +7,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import HomeScreen from '../../routes/HomeScreen/HomeScreen'
 import BagPage from '../../routes/BagPage/BagPage'
+import ScorecardsPage from '../../routes/ScorecardsPage/ScorecardsPage'
 import './App.css'
 
 class App extends React.Component {
@@ -42,7 +43,9 @@ class App extends React.Component {
     })
   }
 
-  setScorecards = () => {}
+  setScorecards = (scorecards) => {
+    this.setState({ scorecards })
+  }
 
   render(){
     const contextValue = {
@@ -88,6 +91,10 @@ class App extends React.Component {
               <Route
                 path={'/my-bag'}
                 component={BagPage} 
+              />
+              <Route
+                path={'/scorecards'}
+                component={ScorecardsPage} 
               />
             </Switch>
           </main>
