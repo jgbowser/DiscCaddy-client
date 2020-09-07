@@ -6,6 +6,12 @@ import './BagPage.css'
 
 
 export default class BagPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      hasError: false,
+    }
+  }
   
   static contextType = DiscCaddyContext
 
@@ -24,11 +30,11 @@ export default class BagPage extends React.Component {
 
   handleSubmit = (event, value) => { 
     event.preventDefault()
+    this.context.clearError()
     const valueAsNumber = Number(value)
     DiscApiService.postUserDisc(valueAsNumber)
       .then(this.context.setNewDisc)
-      
-    
+      .catch(this.context.setError)
   }
 
   makeDiscOptions = discs => {
