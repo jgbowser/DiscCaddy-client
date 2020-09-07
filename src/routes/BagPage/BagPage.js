@@ -1,5 +1,6 @@
 import React from 'react'
 import NewDiscForm from '../../components/NewDiscForm/NewDiscForm'
+import BagDiscAccordion from '../../components/BagDiscAccordion/BagDiscAccordion'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
 import DiscApiService from '../../services/disc-api-service'
 import './BagPage.css'
@@ -43,9 +44,16 @@ export default class BagPage extends React.Component {
     )
   }
 
+  makeDiscAccordions = userDiscs => {
+    return userDiscs.map((disc, i) => 
+      <BagDiscAccordion {...disc} index={i} key={disc.id}/>
+    )
+  }
+
   render() {
     const { discs = [], userBag = [], error } = this.context
     const discOptions = this.makeDiscOptions(discs)
+    const discAccordions = this.makeDiscAccordions(userBag)
     return (
       <section className='BagPage'>
         <h2>My Bag</h2>
@@ -55,7 +63,9 @@ export default class BagPage extends React.Component {
         >
           {discOptions}
         </NewDiscForm>
-
+        <div className='BagPage__accordion_group'>
+          {discAccordions}
+        </div>
       </section>
     )
   }
