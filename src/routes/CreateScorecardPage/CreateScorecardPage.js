@@ -32,11 +32,40 @@ export default class CreateScorecardPage extends React.Component {
     }
   }
 
+  calculateScoreTotal = (scorecard) => {
+    let parDiff = 0
+    const strokes = Object.values(scorecard)
+    const totalStrokes = strokes.reduce((a, c) => {
+      if(c !== 0) {
+        parDiff = parDiff + (c - 3)
+      }
+      return a + c
+    }, 0)
+
+    const scoreData = {
+      parDiff,
+      totalStrokes
+    }
+
+    return scoreData
+  }
+
   render() {
     const { scorecard } = this.state
+    const scoreData = this.calculateScoreTotal(scorecard)
     return (
       <section className='CreateScorecard'>
-        <Scorecard scorecard={scorecard} />
+        <div className='CreateScorecard__scorecard-wrapper'>
+          <Scorecard scorecard={scorecard} />
+          <div className='CreateScorecard__results'>
+            <div className='CreateScorecard__par_total'>
+              <p>Par: 54</p>
+            </div>
+            <div className='CreateScorecard__score_total'>
+              <p>Score: {`${scoreData.totalStrokes}(${scoreData.parDiff})`}</p>
+            </div>
+          </div>
+        </div>
       </section>
     )
   }
