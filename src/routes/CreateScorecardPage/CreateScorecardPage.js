@@ -1,5 +1,8 @@
 import React from 'react'
 import Scorecard from '../../components/Scorecard/Scorecard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import './CreateScorecardPage.css'
 
 export default class CreateScorecardPage extends React.Component {
@@ -41,17 +44,23 @@ export default class CreateScorecardPage extends React.Component {
       }
       return a + c
     }, 0)
-
     const scoreData = {
       parDiff,
       totalStrokes
     }
-
     return scoreData
   }
 
+  incrementCurrentHole = () => {
+    this.setState({ currentHole: this.state.currentHole + 1 })
+  }
+
+  decrementCurrentHole = () => {
+    this.setState({ currentHole: this.state.currentHole - 1})
+  }
+
   render() {
-    const { scorecard } = this.state
+    const { scorecard, currentHole, currentStrokeCount } = this.state
     const scoreData = this.calculateScoreTotal(scorecard)
     return (
       <section className='CreateScorecard'>
@@ -64,6 +73,30 @@ export default class CreateScorecardPage extends React.Component {
             <div className='CreateScorecard__score_total'>
               <p>Score: {`${scoreData.totalStrokes}(${scoreData.parDiff})`}</p>
             </div>
+          </div>
+        </div>
+
+        <div className='CreateScorecard__controls'>
+          <div className='CreateScorecard__controls_info'>
+
+            <span 
+              className='CreateScorecard__controls_faIcon'
+              onClick={this.decrementCurrentHole}
+            >
+              {currentHole !== 1 && <FontAwesomeIcon icon={faChevronLeft} />}
+            </span>
+            <span>Hole {`${currentHole}`}</span>
+            <span 
+              className='CreateScorecard__controls_faIcon'
+              onClick={this.incrementCurrentHole}
+            >
+              {currentHole !== 18 && <FontAwesomeIcon icon={faChevronRight} />}
+            </span>
+
+            <p>Par 3</p>
+          </div>
+          <div className='CreateScorecard__controls_incrementer'>
+
           </div>
         </div>
       </section>
