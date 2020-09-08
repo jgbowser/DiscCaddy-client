@@ -19,15 +19,18 @@ export default class ScorecardsPage extends React.Component {
   }
 
   makeScorecardAccordions = scorecards => {
-
+    return scorecards.map((scorecard, i) =>
+      <ScorecardAccordion {...scorecard} index={i} key={scorecard.id} />
+    )
   }
 
   render() {
     const { scorecards = [] } = this.context
+    const scorecardAccordions = this.makeScorecardAccordions(scorecards)
     return (
       <section className='ScorecardsPage'>
         <div className='ScorecardsPage__accordion_group'>
-          <ScorecardAccordion />
+          {scorecardAccordions}
         </div>
       </section>
     )
