@@ -20,7 +20,6 @@ export default class BagPage extends React.Component {
     } catch(error) {
         this.context.setError(error)
     }
-    
   }
 
   handleSubmit = (event, value) => { 

@@ -1,11 +1,13 @@
 import React from 'react'
 import Scorecard from '../../components/Scorecard/Scorecard'
+import ShotSelector from '../../components/ShotSelector/ShotSelector'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import DiscApiService from '../../services/disc-api-service'
 import ScorecardApiService from '../../services/scorecard-api-service'
 import './CreateScorecardPage.css'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
@@ -34,11 +36,20 @@ export default class CreateScorecardPage extends React.Component {
         hole_18: 0,
       currentHole: 1,
       currentStrokeCount: 3,
-      showDiscs: false,
     }
   }
 
   static contextType = DiscCaddyContext
+
+  async componentDidMount() {
+    this.context.clearError()
+    try {
+      const userBag = await DiscApiService.getUserBag()
+      await this.context.setUserBag(userBag)
+    } catch(error) {
+        this.context.setError(error)
+    }
+  }
 
   handleFinishRound = () => {
     this.context.clearError()
@@ -211,6 +222,7 @@ export default class CreateScorecardPage extends React.Component {
               <button onClick={this.handleFinishRound}>Finish Round</button>
           </div>
         </div>
+        <ShotSelector />
       </section>
     )
   }
