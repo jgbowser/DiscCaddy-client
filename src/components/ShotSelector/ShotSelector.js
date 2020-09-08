@@ -13,7 +13,68 @@ export default class ShotSelector extends React.Component {
 
   static contextType = DiscCaddyContext
 
+  filterOverstableDiscs = (userDiscs, distance) => {
+    const discs = userDiscs.filter(disc => 
+      (disc.turn + disc.fade > 1) && (disc.turn > -3)
+    )
+    if(!distance) {
+      return discs
+    } else {
+      return this.filterDiscsByMaxDistance(discs, distance)
+    }
+  }
+
+  filterUnderstableDiscs = (userDiscs, distance) => {
+    const discs = userDiscs.filter(disc => 
+      (disc.turn + disc.fade <= -1)
+    )
+    if(!distance) {
+      return discs
+    } else {
+      return this.filterDiscsByMaxDistance(discs, distance)
+    }
+  }
+
+  filterStraightDiscs = (userDiscs, distance) => {
+    const discs = userDiscs.filter(disc => 
+      (disc.turn + disc.fade > -1) && (disc.turn + disc.fade <= 1)
+    )
+    if(!distance) {
+      return discs
+    } else {
+      return this.filterDiscsByMaxDistance(discs, distance)
+    }
+  }
+
+  filterFlexDiscs = (userDiscs, distance) => {
+    const discs = userDiscs.filter(disc => 
+      (disc.turn + disc.fade > -2) && (disc.turn + disc.fade < 2) && (disc.turn < -2)
+    )
+    if(!distance) {
+      return discs
+    } else {
+      return this.filterDiscsByMaxDistance(discs, distance)
+    }
+  }
+
+  filterDiscsByMaxDistance = (discs, distance) => {
+    if(distance === 200) {
+      return discs.filter(disc => 
+        (disc.speed + disc.glide < 6))
+    } else if(distance === 300) {
+      return discs.filter(disc => 
+        (disc.speed + disc.glide >= 6) && (disc.speed + disc.glide < 11))
+    } else if(distance === 400) {
+      return discs.filter(disc => 
+        (disc.speed + disc.glide >=11) && (disc.speed + disc.glide < 15))
+    } else if(distance === 500) {
+      return discs.filter(disc => 
+        (disc.speed + disc.glide >= 15))
+    }
+  }
+
   renderShotsOrDiscs = () => {
+
     if(this.state.showDiscs === '') {
       return (
         <div className='DiscSelector__shots_container'>
