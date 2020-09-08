@@ -11,6 +11,7 @@ const DiscCaddyContext = React.createContext({
   setUserBag: () => {},
   setNewDisc: () => {},
   setScorecards: () => {},
+  setNewScorecard: () => {},
 })
 
 export default DiscCaddyContext

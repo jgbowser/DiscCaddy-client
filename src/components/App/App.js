@@ -48,6 +48,12 @@ class App extends React.Component {
     this.setState({ scorecards })
   }
 
+  setNewScorecard = (newScorecard) => {
+    this.setState({
+      scorecards: [...this.state.scorecards, newScorecard]
+    })
+  }
+
   render(){
     const contextValue = {
       error: this.state.error,
@@ -60,6 +66,7 @@ class App extends React.Component {
       setUserBag: this.setUserBag,
       setNewDisc: this.setNewDisc,
       setScorecards: this.setScorecards,
+      setNewScorecard: this.setNewScorecard,
     }
     return (
       <DiscCaddyContext.Provider value={contextValue}>
