@@ -1,4 +1,5 @@
 import React from 'react'
+import Scorecard from '../Scorecard/Scorecard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
@@ -70,7 +71,8 @@ export default class ScorecardAccordion extends React.Component {
           aria-labelledby={this.props.index}
           className={`ScorecardsPage__accordion_panel ${isOpen ? 'expanded' : 'collapsed'}`}
         >
-          <div className='ScorecardsPage__top_row_scores'>
+          <Scorecard scorecard={this.props} />
+          {/* <div className='ScorecardsPage__top_row_scores'>
             <div className='ScorecardsPage__holes'>
               <span className="ScorecardsPage__scorecard_box">Hole</span>
               <span className="ScorecardsPage__scorecard_box">1</span>
@@ -146,7 +148,7 @@ export default class ScorecardAccordion extends React.Component {
               <span className="ScorecardsPage__scorecard_box">{(this.props.hole_17 === 0) ? '-' : this.props.hole_17}</span>
               <span className="ScorecardsPage__scorecard_box">{(this.props.hole_18 === 0) ? '-' : this.props.hole_18}</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     )
