@@ -9,7 +9,6 @@ export default class CreateScorecardPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      scorecard: {
         hole_1: 0,
         hole_2: 0,
         hole_3: 0,
@@ -27,8 +26,7 @@ export default class CreateScorecardPage extends React.Component {
         hole_15: 0,
         hole_16: 0,
         hole_17: 0,
-        hole_18: 0
-      },
+        hole_18: 0,
       currentHole: 1,
       currentStrokeCount: 3,
       showDiscs: false,
@@ -51,16 +49,40 @@ export default class CreateScorecardPage extends React.Component {
     return scoreData
   }
 
-  incrementCurrentHole = () => {
-    this.setState({ currentHole: this.state.currentHole + 1 })
+  incrementCurrentHoleAndSetStrokes = () => {
+    const newState = {}
+    const holeToSet = `hole_${this.state.currentHole}`
+    newState[holeToSet] = this.state.currentStrokeCount
+    newState.currentHole = this.state.currentHole + 1
+    this.setState(newState)
   }
 
-  decrementCurrentHole = () => {
+  decrementCurrentHoleAndSetStrokes = () => {
     this.setState({ currentHole: this.state.currentHole - 1})
   }
 
   render() {
-    const { scorecard, currentHole, currentStrokeCount } = this.state
+    const { currentHole, currentStrokeCount } = this.state
+    const scorecard = {
+      hole_1: this.state.hole_1,
+      hole_2: this.state.hole_2,
+      hole_3: this.state.hole_3,
+      hole_4: this.state.hole_4,
+      hole_5: this.state.hole_5,
+      hole_6: this.state.hole_6,
+      hole_7: this.state.hole_7,
+      hole_8: this.state.hole_8,
+      hole_9: this.state.hole_9,
+      hole_10: this.state.hole_10,
+      hole_11: this.state.hole_11,
+      hole_12: this.state.hole_12,
+      hole_13: this.state.hole_13,
+      hole_14: this.state.hole_14,
+      hole_15: this.state.hole_15,
+      hole_16: this.state.hole_16,
+      hole_17: this.state.hole_17,
+      hole_18: this.state.hole_18,
+    }
     const scoreData = this.calculateScoreTotal(scorecard)
     return (
       <section className='CreateScorecard'>
@@ -81,21 +103,21 @@ export default class CreateScorecardPage extends React.Component {
 
             <span 
               className='CreateScorecard__controls_faIcon'
-              onClick={this.decrementCurrentHole}
+              onClick={this.decrementCurrentHoleAndSetStrokes}
             >
               {currentHole !== 1 && <FontAwesomeIcon icon={faChevronLeft} />}
             </span>
             <span>Hole {`${currentHole}`}</span>
             <span 
               className='CreateScorecard__controls_faIcon'
-              onClick={this.incrementCurrentHole}
+              onClick={this.incrementCurrentHoleAndSetStrokes}
             >
               {currentHole !== 18 && <FontAwesomeIcon icon={faChevronRight} />}
             </span>
 
             <p>Par 3</p>
           </div>
-          <div className='CreateScorecard__controls_incrementer'>
+          <div className='CreateScorecard__controls_score'>
 
           </div>
         </div>
