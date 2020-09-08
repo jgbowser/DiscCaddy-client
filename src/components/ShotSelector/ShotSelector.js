@@ -1,5 +1,7 @@
 import React from 'react'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUndo} from '@fortawesome/free-solid-svg-icons'
 import './ShotSelector.css'
 
 export default class ShotSelector extends React.Component {
@@ -149,6 +151,7 @@ export default class ShotSelector extends React.Component {
     return (
       <section className='DiscSelector'>
         <h4>Choose a shot shape</h4>
+        {this.state.showDiscs !== '' && <div onClick={() => this.setState({ showDiscs: ''})}><FontAwesomeIcon icon={faUndo} /></div>}
         {error
           ? <p className='red'>{error.message}</p>
           : this.renderShotsOrDiscs()}
