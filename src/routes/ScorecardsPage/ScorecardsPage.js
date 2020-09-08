@@ -1,4 +1,5 @@
 import React from 'react'
+import ScorecardAccordion from '../../components/ScorecardAccordion/ScorecardAccordion'
 import './ScorecardsPage.css'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
 import ScorecardApiService from '../../services/scorecard-api-service'
@@ -17,8 +18,18 @@ export default class ScorecardsPage extends React.Component {
     }
   }
 
+  makeScorecardAccordions = scorecards => {
+
+  }
+
   render() {
     const { scorecards = [] } = this.context
-    return <p>hello world</p>
+    return (
+      <section className='ScorecardsPage'>
+        <div className='ScorecardsPage__accordion_group'>
+          <ScorecardAccordion />
+        </div>
+      </section>
+    )
   }
 }

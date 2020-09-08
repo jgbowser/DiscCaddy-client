@@ -1,10 +1,11 @@
-.BagPage__accordion_panel.collapsed {
+.ScorecardsPage__accordion_panel.collapsed {
   opacity: 0;
   max-height: 0px;
   overflow-y: hidden;
 }
 
-.BagPage__accordion_panel.expanded {
+.ScorecardsPage__accordion_panel.expanded {
   opacity: 1;
   max-height: 1000px;
+  
 }
