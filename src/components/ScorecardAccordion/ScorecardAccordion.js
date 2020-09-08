@@ -26,11 +26,8 @@ export default class ScorecardAccordion extends React.Component {
     
     for(const [key, value] of Object.entries(propsData)) {
       if(key.startsWith('hole') && value !== 0){
-        
         score = score + value
         holesPlayed++
-        console.log('score', score)
-        console.log('holesPlayed', holesPlayed)
       }
     }
     let parDiff = (score - (holesPlayed * 3))
@@ -43,7 +40,7 @@ export default class ScorecardAccordion extends React.Component {
 
   render() {
     const { isOpen } = this.state
-    console.log(this.getScore(this.props))
+    const scoreData = this.getScore(this.props)
     return (
       <>
         <h3 className='ScorecardsPage__accordion_header'>
@@ -57,7 +54,7 @@ export default class ScorecardAccordion extends React.Component {
               {this.getScorecardFormattedDate(this.props.date_created)}
             </span>
             <span className='ScorecardsPage__accordion_score'>
-              Score here
+              {`${scoreData.score}(${scoreData.parDiff})`}
             </span>
             <span className='ScorecardsPage__accordion_icon'>
               {(isOpen)
