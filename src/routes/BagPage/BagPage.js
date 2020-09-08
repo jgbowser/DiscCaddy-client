@@ -58,7 +58,7 @@ export default class BagPage extends React.Component {
           {discOptions}
         </NewDiscForm>
         <div className='BagPage__accordion_group'>
-          {discAccordions}
+          {userBag.length === 0 ? <p>Get started by adding some discs</p> : discAccordions}
         </div>
       </section>
     )
