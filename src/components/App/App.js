@@ -8,6 +8,7 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import HomeScreen from '../../routes/HomeScreen/HomeScreen'
 import BagPage from '../../routes/BagPage/BagPage'
 import ScorecardsPage from '../../routes/ScorecardsPage/ScorecardsPage'
+import CreateScorecardPage from '../../routes/CreateScorecardPage/CreateScorecardPage'
 import './App.css'
 
 class App extends React.Component {
@@ -65,7 +66,7 @@ class App extends React.Component {
         <div className='App'>
           <header>
             <Route
-              path={['/home', '/scorecards', '/my-bag']}
+              path={['/home', '/scorecards', '/my-bag', '/new-scorecard']}
               component={Header} 
             />
           </header>
@@ -73,29 +74,33 @@ class App extends React.Component {
             <Switch>
               <Route 
                 exact 
-                path={'/'} 
+                path='/' 
                 component={LandingPage} 
               />
               <Route
-                path={'/login'}
+                path='/login'
                 component={LoginPage} 
               />
                 <Route
-                  path={'/register'}
+                  path='/register'
                   component={RegistrationPage} 
                 />
               <Route
-                path={'/home'}
+                path='/home'
                 component={HomeScreen} 
               />
               <Route
-                path={'/my-bag'}
+                path='/my-bag'
                 component={BagPage} 
               />
               <Route
-                path={'/scorecards'}
+                path='/scorecards'
                 component={ScorecardsPage} 
               />
+              <Route
+                path='/new-scorecard'
+                component={CreateScorecardPage}
+             />
             </Switch>
           </main>
         </div>

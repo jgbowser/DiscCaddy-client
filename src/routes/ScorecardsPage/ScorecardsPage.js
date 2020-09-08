@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ScorecardAccordion from '../../components/ScorecardAccordion/ScorecardAccordion'
 import './ScorecardsPage.css'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
@@ -25,10 +26,13 @@ export default class ScorecardsPage extends React.Component {
   }
 
   render() {
-    const { scorecards = [] } = this.context
+    const { scorecards = [], error } = this.context
     const scorecardAccordions = this.makeScorecardAccordions(scorecards)
     return (
       <section className='ScorecardsPage'>
+        <h2>Scorecards</h2>
+        <Link className='ScorecardsPage__link' to='/new-scorecard'>Start a new round</Link>
+        {error && <p className='red'>{error.message}</p>}
         <div className='ScorecardsPage__accordion_group'>
           {scorecardAccordions}
         </div>
