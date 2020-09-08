@@ -33,9 +33,10 @@ export default class ScorecardAccordion extends React.Component {
         console.log('holesPlayed', holesPlayed)
       }
     }
+    let parDiff = (score - (holesPlayed * 3))
     const scoreData = {
       score,
-      parDiff: score - (holesPlayed * 3)
+      parDiff
     }
     return scoreData
   }
