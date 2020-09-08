@@ -5,6 +5,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import ScorecardApiService from '../../services/scorecard-api-service'
 import './CreateScorecardPage.css'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
@@ -39,9 +40,30 @@ export default class CreateScorecardPage extends React.Component {
 
   static contextType = DiscCaddyContext
 
-  handleFinishRound = (scorecard) => {
+  handleFinishRound = () => {
     this.context.clearError()
-    ScorecardApiService.postNewScorecard(scorecard)
+    ScorecardApiService.postNewScorecard(
+      {
+        hole_1: this.state.hole_1,
+        hole_2: this.state.hole_2,
+        hole_3: this.state.hole_3,
+        hole_4: this.state.hole_4,
+        hole_5: this.state.hole_5,
+        hole_6: this.state.hole_6,
+        hole_7: this.state.hole_7,
+        hole_8: this.state.hole_8,
+        hole_9: this.state.hole_9,
+        hole_10: this.state.hole_10,
+        hole_11: this.state.hole_11,
+        hole_12: this.state.hole_12,
+        hole_13: this.state.hole_13,
+        hole_14: this.state.hole_14,
+        hole_15: this.state.hole_15,
+        hole_16: this.state.hole_16,
+        hole_17: this.state.hole_17,
+        hole_18: this.state.hole_18
+      }
+    )
       .then(this.context.setNewScorecard)
       .catch(this.context.setError)
   }
@@ -71,12 +93,16 @@ export default class CreateScorecardPage extends React.Component {
   }
 
   incrementCurrentHoleAndSetStrokes = () => {
-    const newState = {}
-    const holeToSet = `hole_${this.state.currentHole}`
-    newState[holeToSet] = this.state.currentStrokeCount
-    newState.currentHole = this.state.currentHole + 1
-    newState.currentStrokeCount = 3
-    this.setState(newState)
+    if(this.state.currentHole === 18) {
+      this.setState({ hole_18: this.state.currentStrokeCount})
+    } else {
+      const newState = {}
+      const holeToSet = `hole_${this.state.currentHole}`
+      newState[holeToSet] = this.state.currentStrokeCount
+      newState.currentHole = this.state.currentHole + 1
+      newState.currentStrokeCount = 3
+      this.setState(newState)
+    }
   }
 
   decrementCurrentHole = () => {
@@ -84,29 +110,53 @@ export default class CreateScorecardPage extends React.Component {
   }
 
   render() {
-    const { currentHole, currentStrokeCount } = this.state
     const { error } = this.context
+    
+    const { 
+      currentHole, 
+      currentStrokeCount,
+      hole_1,
+      hole_2,
+      hole_3,
+      hole_4,
+      hole_5,
+      hole_6,
+      hole_7,
+      hole_8,
+      hole_9,
+      hole_10,
+      hole_11,
+      hole_12,
+      hole_13,
+      hole_14,
+      hole_15,
+      hole_16,
+      hole_17,
+      hole_18, } = this.state
+    
     const scorecard = {
-      hole_1: this.state.hole_1,
-      hole_2: this.state.hole_2,
-      hole_3: this.state.hole_3,
-      hole_4: this.state.hole_4,
-      hole_5: this.state.hole_5,
-      hole_6: this.state.hole_6,
-      hole_7: this.state.hole_7,
-      hole_8: this.state.hole_8,
-      hole_9: this.state.hole_9,
-      hole_10: this.state.hole_10,
-      hole_11: this.state.hole_11,
-      hole_12: this.state.hole_12,
-      hole_13: this.state.hole_13,
-      hole_14: this.state.hole_14,
-      hole_15: this.state.hole_15,
-      hole_16: this.state.hole_16,
-      hole_17: this.state.hole_17,
-      hole_18: this.state.hole_18,
+      hole_1,
+      hole_2,
+      hole_3,
+      hole_4,
+      hole_5,
+      hole_6,
+      hole_7,
+      hole_8,
+      hole_9,
+      hole_10,
+      hole_11,
+      hole_12,
+      hole_13,
+      hole_14,
+      hole_15,
+      hole_16,
+      hole_17,
+      hole_18
     }
+
     const scoreData = this.calculateScoreTotal(scorecard)
+
     return (
       <section className='CreateScorecard'>
         {error && <p className='red'>{error.message}</p>}
@@ -136,7 +186,7 @@ export default class CreateScorecardPage extends React.Component {
               className='CreateScorecard__controls_faIcon'
               onClick={this.incrementCurrentHoleAndSetStrokes}
             >
-              {currentHole !== 18 && <FontAwesomeIcon icon={faChevronRight} />}
+              {currentHole === 18 ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faChevronRight} />}
             </span>
 
             <p>Par 3</p>
@@ -157,7 +207,7 @@ export default class CreateScorecardPage extends React.Component {
             >
                 <FontAwesomeIcon icon={faPlus} />
               </span>
-              <button onClick={scorecard => this.handleFinishRound(scorecard)}>Finish Round</button>
+              <button onClick={this.handleFinishRound}>Finish Round</button>
           </div>
         </div>
       </section>

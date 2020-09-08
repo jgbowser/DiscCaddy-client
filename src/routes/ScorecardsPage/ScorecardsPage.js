@@ -34,7 +34,7 @@ export default class ScorecardsPage extends React.Component {
         <Link className='ScorecardsPage__link' to='/new-scorecard'>Start a new round</Link>
         {error && <p className='red'>{error.message}</p>}
         <div className='ScorecardsPage__accordion_group'>
-          {scorecardAccordions}
+          {scorecards.length === 0 ? <p>Get started by creating a Scorecard</p> : scorecardAccordions}
         </div>
       </section>
     )
