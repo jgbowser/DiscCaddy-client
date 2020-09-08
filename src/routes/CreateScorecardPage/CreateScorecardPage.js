@@ -66,6 +66,7 @@ export default class CreateScorecardPage extends React.Component {
     )
       .then(this.context.setNewScorecard)
       .catch(this.context.setError)
+    this.props.history.push('/scorecards')
   }
 
   decrementStrokeCount = () => {
