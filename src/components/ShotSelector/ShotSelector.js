@@ -147,7 +147,7 @@ export default class ShotSelector extends React.Component {
   }
 
   render() {
-    const { userBag = [], error } = this.context
+    const { error } = this.context
     return (
       <section className='DiscSelector'>
         <h4>Choose a shot shape</h4>

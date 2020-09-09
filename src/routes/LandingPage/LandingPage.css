@@ -1,4 +1,39 @@
 .LandingPage {
   min-height: 100vh;
   text-align: center;
+  letter-spacing: .8px;
+}
+
+.LandingPage h2 {
+  background-color: rgb(253, 114, 21);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.LandingPage p {
+  margin-bottom: 25px;
+}
+
+.LandingPage__text {
+  line-height: 1.75rem;
+  padding: 0 10px;
+}
+
+.LandingPage__link {
+  display: block;
+  max-width: 320px;
+  text-decoration: none;
+  color: rgb(253, 114, 21);
+  font-weight: 800;
+  border: 3px solid rgb(253, 114, 21);
+  padding: 10px;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
+.LandingPage__link:hover,
+.LandingPage__link:active {
+  background-color: rgb(253, 114, 21);
+  color: rgb(255, 255, 255);
 }
