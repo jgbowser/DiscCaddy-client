@@ -1,6 +1,10 @@
 /* bring in normalize.css styles */
 @import-normalize;
 
+:root {
+  --main-color: rgb(253, 114, 21);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
