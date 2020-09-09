@@ -1,0 +1,26 @@
+.Header {
+  display: flex;
+  height: 47px;
+  background-color: var(--main-color);
+  letter-spacing: .8px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 12px rgb(0, 0, 0, 0.5);
+}
+
+.Header h1 {
+  /* display: inline-block; */
+  margin: 0;
+  padding-left: 10px;
+}
+
+.Header__link {
+  text-decoration: none;
+  color: white;
+}
+
+.fa-user-circle {
+  font-size: 30px;
+  color: white;
+  padding-right: 10px;
+}
