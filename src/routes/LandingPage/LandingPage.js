@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './LandingPage.css'
 
 export default class LandingPage extends React.Component {
-
-  //Create a conditional render to check for AuthToken and redirect to /home if found
 
   render() {
     return (
@@ -19,5 +18,4 @@ export default class LandingPage extends React.Component {
       </section>
     )
   }
-
 }

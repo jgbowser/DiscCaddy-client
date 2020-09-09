@@ -1,1 +1,7 @@
+.App {
+  min-height: 100vh;
+}
 
+.App__main {
+  min-height: 100vh;
+}
