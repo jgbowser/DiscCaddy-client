@@ -1,0 +1,49 @@
+.HomeScreen {
+  min-height: 100vh;
+  margin-top: 80px;
+  padding: 0 10px;
+  letter-spacing: .8px;
+  line-height: 1.75rem;
+}
+
+.HomeScreen__link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  font-size: 22px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.6) ;
+  border-radius: 15px;
+  color: white;
+  font-weight: 700;
+}
+
+.HomeScreen__link:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: black;
+}
+
+.HomeScreen__scorecards,
+.HomeScreen__my_bag {
+  background-color: var(--main-color);
+  margin: 55px 10px;
+  text-align: center;
+  height: 200px;
+  border: 2px solid var(--main-color);
+  border-radius: 17px;
+}
+
+.HomeScreen__scorecards {
+  background-image: url('../../images/scorecard.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.HomeScreen__my_bag {
+  background-image: url('../../images/disc-bag.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}

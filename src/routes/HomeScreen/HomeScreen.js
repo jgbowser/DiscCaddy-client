@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './HomeScreen.css'
 
 export default class HomeScreen extends React.Component {
   render() {
