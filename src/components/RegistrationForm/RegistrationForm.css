@@ -1,0 +1,23 @@
+.RegistrationForm__form {
+  height: 100%;
+  font-size: 14px;
+  margin: 0;
+}
+
+.RegistrationForm__form button {
+  display: block;
+  width: 55%;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 15px auto;
+  border: 3px solid var(--main-color);
+  background-color: white;
+  color: var(--main-color);
+  border-radius: 15px;
+}
+
+.RegistrationForm__form button:hover,
+.RegistrationForm__form button:active {
+  background-color: var(--main-color);
+  color: white;
+}

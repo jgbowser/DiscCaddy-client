@@ -1,0 +1,12 @@
+.RegistrationPage {
+  text-align: center;
+  min-height: 100vh;
+  letter-spacing: .8px;
+}
+
+.RegistrationPage h2 {
+  background-color: var(--main-color);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-bottom: 25px;
+}
