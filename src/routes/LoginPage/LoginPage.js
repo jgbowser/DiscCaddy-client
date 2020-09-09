@@ -40,7 +40,7 @@ export default class LoginPage extends React.Component {
           <Link className='LoginPage__register_link' to='/register'>
             Sign up for DiscCaddy
           </Link>
-          <p>Explore the app as a demo user</p>
+          <p className='LoginPage__demo_text'>Explore the app as a demo user</p>
           <button onClick={this.handleDemoSubmit}>Try it out</button>
         </div>
       </section>

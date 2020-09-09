@@ -33,7 +33,7 @@ input[type=email] {
   margin: 10px auto;
   width: 80%;
   max-width: 400px;
-  padding: 5px 0;
+  padding: 9px 0;
   color: var(--form-text);
   font-weight: 700;
   text-align: center;

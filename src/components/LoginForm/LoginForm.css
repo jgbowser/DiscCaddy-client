@@ -1,0 +1,17 @@
+.LoginForm__form button {
+  display: block;
+  width: 45%;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 35px auto;
+  border: 3px solid var(--main-color);
+  background-color: white;
+  color: var(--main-color);
+  border-radius: 15px;
+}
+
+.LoginForm__form button:hover,
+.LoginForm__form button:active {
+  background-color: var(--main-color);
+  color: white;
+}

@@ -16,6 +16,14 @@
   margin-bottom: 25px;
 }
 
+.LoginPage h3 {
+  margin-top: 30px;
+}
+
+.LoginPage__demo_text {
+  font-size: 14px;
+}
+
 .LoginPage__register_link {
   display: block;
   max-width: 320px;
@@ -33,4 +41,22 @@
 .LoginPage__register_link:active {
   background-color: white;
   color: var(--main-color);
+}
+
+.LoginPage__content button {
+  display: block;
+  width: 45%;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 25px auto;
+  border: 3px solid var(--main-color);
+  background-color: white;
+  color: var(--main-color);
+  border-radius: 15px;
+}
+
+.LoginPage__content button:hover,
+.LoginPage__content button:active {
+  background-color: var(--main-color);
+  color: white;
 }
