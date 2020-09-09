@@ -1,0 +1,36 @@
+.LoginPage {
+  min-height: 100vh;
+  text-align: center;
+  letter-spacing: .8px;
+}
+
+.LoginPage__content {
+  padding: 0 10px;
+  line-height: 1.75rem;
+}
+
+.LoginPage h2 {
+  background-color: var(--main-color);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.LoginPage__register_link {
+  display: block;
+  max-width: 320px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--main-color);
+  margin: 25px auto 25px auto;
+  padding: 10px;
+  font-weight: 800;
+  border-radius: 20px;
+  border: 3px solid var(--main-color);
+}
+
+.LoginPage__register_link:hover,
+.LoginPage__register_link:active {
+  background-color: white;
+  color: var(--main-color);
+}

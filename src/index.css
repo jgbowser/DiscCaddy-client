@@ -3,6 +3,7 @@
 
 :root {
   --main-color: rgb(253, 114, 21);
+  --form-text: rgb(100, 100, 100);
 }
 
 * {
@@ -24,4 +25,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input[type=text],
+input[type=password],
+input[type=email] {
+  display: block;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 400px;
+  padding: 5px 0;
+  color: var(--form-text);
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid var(--form-text);
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  color: var(--form-text);
+  font-weight: 700;
+}
+
 

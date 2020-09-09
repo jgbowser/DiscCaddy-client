@@ -31,16 +31,18 @@ export default class LoginPage extends React.Component {
   render() {
     return(
       <section className='LoginPage'>
-        <h3>Login to DiscCaddy</h3>
-        <LoginForm 
-          onLoginSuccess={this.handleLoginSuccess}
-        />
-        <h3>Don't have an account?</h3>
-        <Link className='LoginPage__register_link' to='/register'>
-          Sign up for DiscCaddy
-        </Link>
-        <p>Explore the app as a demo user</p>
-        <button onClick={this.handleDemoSubmit}>Try it out</button>
+        <h2>Login to DiscCaddy</h2>
+        <div className='LoginPage__content'>
+          <LoginForm 
+            onLoginSuccess={this.handleLoginSuccess}
+          />
+          <h3>Don't have an account?</h3>
+          <Link className='LoginPage__register_link' to='/register'>
+            Sign up for DiscCaddy
+          </Link>
+          <p>Explore the app as a demo user</p>
+          <button onClick={this.handleDemoSubmit}>Try it out</button>
+        </div>
       </section>
       )
   }
