@@ -115,7 +115,7 @@ export default class ShotSelector extends React.Component {
       const filteredDiscs = this.filterOverstableDiscs(userBag, distance)
       return filteredDiscs.map((disc, i) =>
         <div key={i} className='DiscSelector__disc'>
-          <span>{`${disc.brand} ${disc.name}`}</span>
+          <span>{`${disc.brand} ${disc.name}`}</span><br />
           <span>{`Speed: ${disc.speed} Glide: ${disc.glide} Turn: ${disc.turn} Fade: ${disc.fade}`}</span>
         </div>
       )
@@ -123,7 +123,7 @@ export default class ShotSelector extends React.Component {
       const filteredDiscs = this.filterUnderstableDiscs(userBag, distance)
       return filteredDiscs.map((disc, i) =>
         <div key={i} className='DiscSelector__disc'>
-          <span>{`${disc.brand} ${disc.name}`}</span>
+          <span>{`${disc.brand} ${disc.name}`}</span><br />
           <span>{`Speed: ${disc.speed} Glide: ${disc.glide} Turn: ${disc.turn} Fade: ${disc.fade}`}</span>
         </div>
       )
@@ -131,7 +131,7 @@ export default class ShotSelector extends React.Component {
       const filteredDiscs = this.filterStraightDiscs(userBag, distance)
       return filteredDiscs.map((disc, i) =>
         <div key={i} className='DiscSelector__disc'>
-          <span>{`${disc.brand} ${disc.name}`}</span>
+          <span>{`${disc.brand} ${disc.name}`}</span><br />
           <span>{`Speed: ${disc.speed} Glide: ${disc.glide} Turn: ${disc.turn} Fade: ${disc.fade}`}</span>
         </div>
       )
@@ -139,7 +139,7 @@ export default class ShotSelector extends React.Component {
       const filteredDiscs = this.filterFlexDiscs(userBag, distance)
       return filteredDiscs.map((disc, i) =>
         <div key={i} className='DiscSelector__disc'>
-          <span>{`${disc.brand} ${disc.name}`}</span>
+          <span>{`${disc.brand} ${disc.name}`}</span><br />
           <span>{`Speed: ${disc.speed} Glide: ${disc.glide} Turn: ${disc.turn} Fade: ${disc.fade}`}</span>
         </div>
       )
@@ -149,11 +149,11 @@ export default class ShotSelector extends React.Component {
   render() {
     const { error } = this.context
     return (
-      <section className='DiscSelector'>
+      <section className='ShotSelector'>
         <h4>Choose a shot shape</h4>
-        {this.state.showDiscs !== '' && <div onClick={() => this.setState({ showDiscs: ''})}><FontAwesomeIcon icon={faUndo} /></div>}
+        {this.state.showDiscs !== '' && <div className='ShotSelector__icon' onClick={() => this.setState({ showDiscs: ''})}><FontAwesomeIcon icon={faUndo} /></div>}
         {error
-          ? <p className='red'>{error.message}</p>
+          ? <p className='red scorecards_error'>Something went wrong, try again</p>
           : this.renderShotsOrDiscs()}
       </section>
     )
