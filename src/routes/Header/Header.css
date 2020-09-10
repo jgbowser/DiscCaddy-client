@@ -28,3 +28,16 @@
   color: white;
   padding-right: 10px;
 }
+
+.Header__user_controls:hover {
+  cursor: pointer;
+}
+
+.Header__controls_text {
+  position: absolute;
+  top: 40%;
+  right: 40px;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
