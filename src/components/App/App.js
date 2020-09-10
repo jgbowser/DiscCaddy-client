@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import PrivateRoute from '../Utils/PrivateRoute'
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import DiscCaddyContext from '../../context/DiscCaddyContext'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import Header from '../../routes/Header/Header'
@@ -79,16 +81,16 @@ class App extends React.Component {
           </header>
           <main className='App__main'>
             <Switch>
-              <Route 
+              <PublicOnlyRoute 
                 exact 
                 path='/' 
                 component={LandingPage} 
               />
-              <Route
+              <PublicOnlyRoute
                 path='/login'
                 component={LoginPage} 
               />
-                <Route
+                <PublicOnlyRoute
                   path='/register'
                   component={RegistrationPage} 
                 />
@@ -96,15 +98,15 @@ class App extends React.Component {
                 path='/home'
                 component={HomeScreen} 
               />
-              <Route
+              <PrivateRoute
                 path='/my-bag'
                 component={BagPage} 
               />
-              <Route
+              <PrivateRoute
                 path='/scorecards'
                 component={ScorecardsPage} 
               />
-              <Route
+              <PrivateRoute
                 path='/new-scorecard'
                 component={CreateScorecardPage}
              />
