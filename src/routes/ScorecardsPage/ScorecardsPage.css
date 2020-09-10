@@ -23,6 +23,7 @@
   background-color: var(--main-color);
   border: 3px solid var(--main-color);
   border-radius: 8px;
+  text-shadow: var(--black-stroke);
 }
 
 .ScorecardsPage__link:hover,

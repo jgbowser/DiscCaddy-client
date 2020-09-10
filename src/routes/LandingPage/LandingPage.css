@@ -9,6 +9,7 @@
   color: rgb(255, 255, 255);
   padding: 10px;
   margin-bottom: 25px;
+  text-shadow: var(--black-stroke);
 }
 
 .LandingPage p {
@@ -36,4 +37,5 @@
 .LandingPage__link:active {
   background-color: var(--main-color);
   color: rgb(255, 255, 255);
+  text-shadow: var(--black-stroke);
 }

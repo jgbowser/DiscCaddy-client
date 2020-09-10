@@ -66,4 +66,5 @@
 .CreateScorecard__controls_score button:active {
   background-color: var(--main-color);
   color: white;
+  text-shadow: var(--black-stroke);
 }

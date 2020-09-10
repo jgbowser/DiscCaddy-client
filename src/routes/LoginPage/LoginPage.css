@@ -14,6 +14,7 @@
   color: rgb(255, 255, 255);
   padding: 10px;
   margin-bottom: 25px;
+  text-shadow: var(--black-stroke);
 }
 
 .LoginPage h3 {
@@ -35,12 +36,14 @@
   font-weight: 800;
   border-radius: 20px;
   border: 3px solid var(--main-color);
+  text-shadow: var(--black-stroke);
 }
 
 .LoginPage__register_link:hover,
 .LoginPage__register_link:active {
   background-color: white;
   color: var(--main-color);
+  text-shadow: none;
 }
 
 .LoginPage__content button {
@@ -59,4 +62,5 @@
 .LoginPage__content button:active {
   background-color: var(--main-color);
   color: white;
+  text-shadow: var(--black-stroke);
 }

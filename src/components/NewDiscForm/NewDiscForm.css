@@ -22,11 +22,13 @@
   border: 3px solid var(--main-color);
   font-weight: 600;
   border-radius: 15px; 
+  text-shadow: var(--black-stroke);
 }
 
 .BagPage__add_disc_form button:hover,
 .BagPage__add_disc_form button:active {
   background-color: white;
   color: var(--main-color);
+  text-shadow: none;
 }
 
