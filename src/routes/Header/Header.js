@@ -10,7 +10,7 @@ export default class Header extends React.Component {
   renderLogOutText = () => {
     return (
       <div className='Header__user_controls' onClick={TokenService.clearAuthToken}>
-        <span className='Header__controls_text'>Log Out</span>
+        <Link to='/home' className='Header__controls_text'>Log Out</Link>
         <FontAwesomeIcon icon={faUserCircle} className='Header__user_icon' />
       </div>
       
