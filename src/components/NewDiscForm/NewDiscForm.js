@@ -1,4 +1,5 @@
 import React from 'react'
+import './NewDiscForm.css'
 
 export default class NewDiscForm extends React.Component {
   constructor(props) {

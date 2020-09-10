@@ -1,3 +1,10 @@
+.BagPage__accordion_panel {
+  border: 1px solid var(--form-text);
+  border-top: none;
+  margin-bottom: 5px;
+  
+}
+
 .BagPage__accordion_panel.collapsed {
   opacity: 0;
   max-height: 0px;
@@ -7,4 +14,30 @@
 .BagPage__accordion_panel.expanded {
   opacity: 1;
   max-height: 1000px;
+  padding: 10px 0;
+  font-size: 12px;
 }
+
+.BagPage__accordion_button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 5px;
+  background-color: white;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+.BagPage__accordion_icon {
+  justify-self: flex-end;
+}
+
+.BagPage__accordion_stats {
+  list-style-type: none;
+}
+
+.BagPage__accordion_stats_item {
+  padding: 2px;
+}
+

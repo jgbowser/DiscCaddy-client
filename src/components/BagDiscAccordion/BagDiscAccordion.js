@@ -51,7 +51,7 @@ export default class BagDiscAccordion extends React.Component {
             <li className='BagPage__accordion_stats_item'>Speed: {this.props.speed}</li>
             <li className='BagPage__accordion_stats_item'>Glide: {this.props.glide}</li>
             <li className='BagPage__accordion_stats_item'>Turn: {this.props.turn}</li>
-            <li className='BagPage__accordion_stats_item'>fade: {this.props.fade}</li>
+            <li className='BagPage__accordion_stats_item'>Fade: {this.props.fade}</li>
           </ul>
         </div>
       </>

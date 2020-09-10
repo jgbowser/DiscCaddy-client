@@ -1,0 +1,24 @@
+.BagPage {
+  min-height: 100vh;
+  padding-top: 47px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  letter-spacing: .8px;
+}
+
+.BagPage h2 {
+  background-color: white;
+  padding: 10px;
+}
+
+.BagPage__accordion_group {
+  background-color: white;
+  padding: 10px;
+}
+
+.bag_error {
+  display: block;
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px;
+}

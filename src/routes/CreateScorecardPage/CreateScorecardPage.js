@@ -171,7 +171,7 @@ export default class CreateScorecardPage extends React.Component {
 
     return (
       <section className='CreateScorecard'>
-        {error && <p className='red'>{error.message}</p>}
+        {error && <p className='red'>Something went wrong, try again</p>}
         <div className='CreateScorecard__scorecard-wrapper'>
           <Scorecard scorecard={scorecard} />
           <div className='CreateScorecard__results'>

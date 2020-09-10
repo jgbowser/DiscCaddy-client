@@ -50,7 +50,7 @@ export default class BagPage extends React.Component {
     return (
       <section className='BagPage'>
         <h2>My Bag</h2>
-        {error && <p className='red'>{error.message}</p>}
+        {error && <p className='red bag_error'>Something went wrong, try again.</p>}
         <NewDiscForm 
           onSubmitNewDisc={this.handleSubmit}
         >

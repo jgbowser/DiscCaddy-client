@@ -1,0 +1,32 @@
+.BagPage__add_disc_form {
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.BagPage__add_disc_form select {
+  display: block;
+  margin: 10px auto;
+  color: var(--form-text);
+  padding: 5px;
+}
+
+.BagPage__add_disc_form button {
+  display: block;
+  width: 50%;
+  max-width: 200px;
+  margin: 10px auto 0 auto;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: white;
+  border: 3px solid var(--main-color);
+  font-weight: 600;
+  border-radius: 15px; 
+}
+
+.BagPage__add_disc_form button:hover,
+.BagPage__add_disc_form button:active {
+  background-color: white;
+  color: var(--main-color);
+}
+

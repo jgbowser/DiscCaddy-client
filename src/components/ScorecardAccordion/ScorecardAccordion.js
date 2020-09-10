@@ -69,86 +69,9 @@ export default class ScorecardAccordion extends React.Component {
           id={`sect${this.props.index}`}
           role='region'
           aria-labelledby={this.props.index}
-          className={`ScorecardsPage__accordion_panel ${isOpen ? 'expanded' : 'collapsed'}`}
+          className={`ScorecardsPage__accordion_panel${isOpen ? '_expanded' : '_collapsed'}`}
         >
           <Scorecard scorecard={this.props} />
-          {/* <div className='ScorecardsPage__top_row_scores'>
-            <div className='ScorecardsPage__holes'>
-              <span className="ScorecardsPage__scorecard_box">Hole</span>
-              <span className="ScorecardsPage__scorecard_box">1</span>
-              <span className="ScorecardsPage__scorecard_box">2</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">4</span>
-              <span className="ScorecardsPage__scorecard_box">5</span>
-              <span className="ScorecardsPage__scorecard_box">6</span>
-              <span className="ScorecardsPage__scorecard_box">7</span>
-              <span className="ScorecardsPage__scorecard_box">8</span>
-              <span className="ScorecardsPage__scorecard_box">9</span>
-            </div>
-            <div className='ScorecardsPage__par'>
-              <span className="ScorecardsPage__scorecard_box">Par</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-            </div>
-            <div className='ScorecardsPage__score'>
-              <span className="ScorecardsPage__scorecard_box">Score</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_1 === 0) ? '-' : this.props.hole_1}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_2 === 0) ? '-' : this.props.hole_2}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_3 === 0) ? '-' : this.props.hole_3}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_4 === 0) ? '-' : this.props.hole_4}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_5 === 0) ? '-' : this.props.hole_5}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_6 === 0) ? '-' : this.props.hole_6}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_7 === 0) ? '-' : this.props.hole_7}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_8 === 0) ? '-' : this.props.hole_8}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_9 === 0) ? '-' : this.props.hole_9}</span>
-            </div>
-          </div>
-
-          <div className='ScorecardsPage__bottom_row_scores'>
-            <div className='ScorecardsPage__holes'>
-              <span className="ScorecardsPage__scorecard_box">Hole</span>
-              <span className="ScorecardsPage__scorecard_box">10</span>
-              <span className="ScorecardsPage__scorecard_box">11</span>
-              <span className="ScorecardsPage__scorecard_box">12</span>
-              <span className="ScorecardsPage__scorecard_box">13</span>
-              <span className="ScorecardsPage__scorecard_box">14</span>
-              <span className="ScorecardsPage__scorecard_box">15</span>
-              <span className="ScorecardsPage__scorecard_box">16</span>
-              <span className="ScorecardsPage__scorecard_box">17</span>
-              <span className="ScorecardsPage__scorecard_box">18</span>
-            </div>
-            <div className='ScorecardsPage__par'>
-              <span className="ScorecardsPage__scorecard_box">Par</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-              <span className="ScorecardsPage__scorecard_box">3</span>
-            </div>
-            <div className='ScorecardsPage__score'>
-              <span className="ScorecardsPage__scorecard_box">Score</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_10 === 0) ? '-' : this.props.hole_10}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_11 === 0) ? '-' : this.props.hole_11}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_12 === 0) ? '-' : this.props.hole_12}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_13 === 0) ? '-' : this.props.hole_13}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_14 === 0) ? '-' : this.props.hole_14}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_15 === 0) ? '-' : this.props.hole_15}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_16 === 0) ? '-' : this.props.hole_16}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_17 === 0) ? '-' : this.props.hole_17}</span>
-              <span className="ScorecardsPage__scorecard_box">{(this.props.hole_18 === 0) ? '-' : this.props.hole_18}</span>
-            </div>
-          </div> */}
         </div>
       </>
     )

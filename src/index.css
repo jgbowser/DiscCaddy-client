@@ -4,6 +4,7 @@
 :root {
   --main-color: rgb(253, 114, 21);
   --form-text: rgb(100, 100, 100);
+  --secondary-color: rgb(238, 237, 237);
 }
 
 * {
