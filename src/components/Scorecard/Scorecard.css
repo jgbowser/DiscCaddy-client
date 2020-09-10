@@ -14,6 +14,7 @@
 .Scorecard__bottom_row_scores {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
 
 .Scorecard__holes,
@@ -24,6 +25,11 @@
 }
 
 .Scorecard__scorecard_box {
+  text-align: center;
   display: inline-block;
   width: calc(100% / 10);
+}
+
+.Scorecard__scorecard_box:first-child {
+  font-size: 10px;
 }

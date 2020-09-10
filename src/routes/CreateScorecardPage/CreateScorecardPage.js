@@ -172,7 +172,7 @@ export default class CreateScorecardPage extends React.Component {
     return (
       <section className='CreateScorecard'>
         {error && <p className='red'>Something went wrong, try again</p>}
-        <div className='CreateScorecard__scorecard-wrapper'>
+        <div className='CreateScorecard__scorecard_wrapper'>
           <Scorecard scorecard={scorecard} />
           <div className='CreateScorecard__results'>
             <div className='CreateScorecard__par_total'>
@@ -193,7 +193,7 @@ export default class CreateScorecardPage extends React.Component {
             >
               {currentHole !== 1 && <FontAwesomeIcon icon={faChevronLeft} />}
             </span>
-            <span>Hole {`${currentHole}`}</span>
+            <span className='CreateScorecard__controls_hole'>Hole {`${currentHole}`}</span>
             <span 
               className='CreateScorecard__controls_faIcon'
               onClick={this.incrementCurrentHoleAndSetStrokes}
@@ -210,7 +210,7 @@ export default class CreateScorecardPage extends React.Component {
             >
                 <FontAwesomeIcon icon={faMinus} />
               </span>
-              <span>
+              <span className='CreateScorecard__score_strokes'>
                 {currentStrokeCount}
               </span>
             <span 
