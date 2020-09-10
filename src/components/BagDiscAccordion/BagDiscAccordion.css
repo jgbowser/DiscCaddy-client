@@ -29,10 +29,6 @@
   font-weight: 600;
 }
 
-.BagPage__accordion_icon {
-  justify-self: flex-end;
-}
-
 .BagPage__accordion_stats {
   list-style-type: none;
 }

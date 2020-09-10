@@ -1,0 +1,48 @@
+.ScorecardsPage {
+  min-height: 100vh;
+  padding-top: 47px;
+  background-color: var(--secondary-color);
+  text-align: center;
+  letter-spacing: .8px;
+}
+
+.ScorecardsPage h2 {
+  background-color: white;
+  padding: 10px;
+}
+
+.ScorecardsPage__link {
+  display: block;
+  width: 90%;
+  max-width: 420px;
+  padding: 10px;
+  margin: 10px auto;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  background-color: var(--main-color);
+  border: 3px solid var(--main-color);
+  border-radius: 8px;
+}
+
+.ScorecardsPage__link:hover,
+.ScorecardsPage__link:active {
+  border: 3px solid var(--main-color);
+  background-color: white;
+  color: var(--main-color);
+}
+
+.ScorecardsPage__accordion_group {
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px 5px;
+}
+
+.scorecards_alert {
+  font-size: 14px;
+}
+
+.scorecards_error {
+  background-color: white;
+  padding: 10px;
+}

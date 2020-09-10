@@ -69,7 +69,7 @@ export default class ScorecardAccordion extends React.Component {
           id={`sect${this.props.index}`}
           role='region'
           aria-labelledby={this.props.index}
-          className={`ScorecardsPage__accordion_panel${isOpen ? '_expanded' : '_collapsed'}`}
+          className={`ScorecardsPage__accordion_panel ${isOpen ? 'expanded' : 'collapsed'}`}
         >
           <Scorecard scorecard={this.props} />
         </div>

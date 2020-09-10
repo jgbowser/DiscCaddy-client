@@ -1,0 +1,29 @@
+.Scorecard__scorecard_container {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 11px;
+  padding: 0 2px;
+}
+
+.Scorecard__top_row_scores {
+  margin-bottom: 15px;
+}
+
+.Scorecard__top_row_scores,
+.Scorecard__bottom_row_scores {
+  display: flex;
+  flex-direction: column;
+}
+
+.Scorecard__holes,
+.Scorecard__par,
+.Scorecard__score {
+  padding: 5px 0;
+  border-bottom: 1px solid var(--form-text);
+}
+
+.Scorecard__scorecard_box {
+  display: inline-block;
+  width: calc(100% / 10);
+}
