@@ -81,6 +81,13 @@
   background-image: url('../../images/flex.jpg');
   background-position: center;
   background-size: contain;
-  background-repeat: none;
+  background-repeat: no-repeat;
   border: 2px solid var(--main-color);
+}
+
+@media all and (min-width: 568px) {
+  .DiscSelector__shot {
+    width: 210px;
+    height: 315px;
+  }
 }
