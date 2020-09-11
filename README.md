@@ -11,6 +11,6 @@ The app has 7 main page views. The components for each page view are found in th
 
 ### Landing Page
 The landing page gives new users a brief description of the app and its purpose.<br>
-![landing Page view](/src/images/README-assets/landing-page.jpg)
+<img src='/src/images/README-assets/landing-page.jpg' width='300' />
 
 
