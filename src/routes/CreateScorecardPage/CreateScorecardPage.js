@@ -172,14 +172,16 @@ export default class CreateScorecardPage extends React.Component {
     return (
       <section className='CreateScorecard'>
         {error && <p className='red'>Something went wrong, try again</p>}
-        <div className='CreateScorecard__scorecard_wrapper'>
-          <Scorecard scorecard={scorecard} />
-          <div className='CreateScorecard__results'>
-            <div className='CreateScorecard__par_total'>
-              <p>Par: 54</p>
-            </div>
-            <div className='CreateScorecard__score_total'>
-              <p>Score: {`${scoreData.totalStrokes}(${scoreData.parDiff})`}</p>
+        <div className='CreateScorecard__container'>
+          <div className='CreateScorecard__scorecard_wrapper'>
+            <Scorecard scorecard={scorecard} />
+            <div className='CreateScorecard__results'>
+              <div className='CreateScorecard__par_total'>
+                <p>Par: 54</p>
+              </div>
+              <div className='CreateScorecard__score_total'>
+                <p>Score: {`${scoreData.totalStrokes}(${scoreData.parDiff})`}</p>
+              </div>
             </div>
           </div>
         </div>

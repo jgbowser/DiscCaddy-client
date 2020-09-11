@@ -6,7 +6,13 @@
   letter-spacing: .8px;
 }
 
+.CreateScorecard__container {
+  background-color: white;
+}
+
 .CreateScorecard__scorecard_wrapper {
+  max-width: 425px;
+  margin: 0 auto;
   font-size: 14px;
   background-color: white;
   padding-top: 10px;
@@ -67,4 +73,10 @@
   background-color: var(--main-color);
   color: white;
   text-shadow: var(--black-stroke);
+}
+
+@media all and (min-width: 425px) {
+  .CreateScorecard__scorecard_wrapper {
+    border: 1px solid var(--form-text);
+  }
 }
