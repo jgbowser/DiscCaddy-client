@@ -39,4 +39,8 @@ The Create a Scorecard page starts with a new, empty scorecard at the top of the
 While on this page view users also have the disc suggestion feature available to them. The user can select one of the 4 basic shot shapes. Once a shape is selected DiscCaddy will filter the list of discs in the user's bag and list any discs which have stats that would match the desired shot shape.<br>
 <img src='/src/images/README-assets/disc-suggest.jpg' width='300' />
 
+## Stack
+Create-React-App was used to bootstrap the project.<br> React Router(DOM) was used to handle navigation through page views.<br> ReactFontAwesome was used to display various svg icons throughout the app.<br>
+Testing used the Jest test framework.
+
 
