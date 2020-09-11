@@ -2,8 +2,10 @@
   display: flex;
   position: fixed;
   top: 0;
-  left: 0;
+  left:0;
   right: 0;
+  max-width: 768px;
+  margin: 0 auto;
   height: 47px;
   background-color: var(--main-color);
   letter-spacing: .8px;
@@ -41,4 +43,10 @@
   color: white;
   font-size: 12px;
   text-shadow: var(--black-stroke);
+}
+
+@media all and (min-width: 768px) {
+  .Header {
+    box-shadow: none;
+  }
 }

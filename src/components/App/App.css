@@ -1,9 +1,18 @@
 .App {
   min-height: 100vh;
+  max-width:768px;
+  margin: 0 auto;
 }
 
 main {
   display: flex;
   flex-direction: column;
+}
+
+@media all and (min-width: 768px) {
+  .App {
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 12px rgb(0, 0, 0, 0.5);
+  }
 }
 
