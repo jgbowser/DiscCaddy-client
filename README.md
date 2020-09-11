@@ -35,7 +35,7 @@ The Scorecards page displays all of the users previously saved scorecards. These
 
 ### Creat a Scorecard Page
 The Create a Scorecard page starts with a new, empty scorecard at the top of the screen. Below the scorecard the user inputs are found. Users can move forward and backward through the wholes. The stroke count for each hole is set by clicking the '+' or '-' buttons. Once a user clicks to advance to the next hole the stroke count is set and displayed on the score card.<br>
-<img src='/src/images/README-assets/scorecard.jpg' width='300' />
+<img src='/src/images/README-assets/scorecard.jpg' width='300' /><br>
 While on this page view users also have the disc suggestion feature available to them. The user can select one of the 4 basic shot shapes. Once a shape is selected DiscCaddy will filter the list of discs in the user's bag and list any discs which have stats that would match the desired shot shape.<br>
 <img src='/src/images/README-assets/disc-suggest.jpg' width='300' />
 
