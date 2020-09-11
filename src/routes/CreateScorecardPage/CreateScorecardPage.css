@@ -51,7 +51,7 @@
   font-size: 20px;
 }
 
-.CreateScorecard__controls_score button {
+.CreateScorecard__controls_submit {
   display: block;
   margin: 10px auto;
   background-color: white;
@@ -62,8 +62,8 @@
   border-radius: 8px;
 }
 
-.CreateScorecard__controls_score button:hover,
-.CreateScorecard__controls_score button:active {
+.CreateScorecard__controls_submit:hover,
+.CreateScorecard__controls_submit:active {
   background-color: var(--main-color);
   color: white;
   text-shadow: var(--black-stroke);

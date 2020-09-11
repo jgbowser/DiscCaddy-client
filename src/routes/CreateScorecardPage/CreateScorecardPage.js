@@ -187,39 +187,43 @@ export default class CreateScorecardPage extends React.Component {
         <div className='CreateScorecard__controls'>
           <div className='CreateScorecard__controls_info'>
 
-            <span 
-              className='CreateScorecard__controls_faIcon'
+            <button 
+              className='CreateScorecard__controls_faIcon hidden_button'
+              aria-label='Previous hole'
               onClick={this.decrementCurrentHole}
             >
               {currentHole !== 1 && <FontAwesomeIcon icon={faChevronLeft} />}
-            </span>
+            </button>
             <span className='CreateScorecard__controls_hole'>Hole {`${currentHole}`}</span>
-            <span 
-              className='CreateScorecard__controls_faIcon'
+            <button 
+              className='CreateScorecard__controls_faIcon hidden_button'
+              aria-label='Next hole'
               onClick={this.incrementCurrentHoleAndSetStrokes}
             >
               {currentHole === 18 ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faChevronRight} />}
-            </span>
+            </button>
 
             <p>Par 3</p>
           </div>
           <div className='CreateScorecard__controls_score'>
-            <span 
-              className='CreateScorecard__score_faIcon'
+            <button 
+              className='CreateScorecard__score_faIcon hidden_button'
+              aria-label='previous hole'
               onClick={this.decrementStrokeCount}
             >
                 <FontAwesomeIcon icon={faMinus} />
-              </span>
+              </button>
               <span className='CreateScorecard__score_strokes'>
                 {currentStrokeCount}
               </span>
-            <span 
-              className='CreateScorecard__score_faIcon'
+            <button 
+              className='CreateScorecard__score_faIcon hidden_button'
+              aria-label='next hole'
               onClick={this.incrementStrokeCount}
             >
                 <FontAwesomeIcon icon={faPlus} />
-              </span>
-              <button onClick={this.handleFinishRound}>Finish Round</button>
+              </button>
+              <button className='CreateScorecard__controls_submit' onClick={this.handleFinishRound}>Finish Round</button>
           </div>
         </div>
         <ShotSelector />
