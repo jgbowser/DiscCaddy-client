@@ -48,3 +48,35 @@
   padding-bottom: 5px;
   border-bottom: 1px solid var(--form-text);
 }
+
+.straight {
+  font-size: 16px;
+  background-image: url('../../images/straight.jpg');
+  background-position: center;
+  background-size: contain;
+  border: 2px solid var(--main-color);
+}
+
+.overstable {
+  font-size: 16px;
+  background-image: url('../../images/overstable.jpg');
+  background-position: center;
+  background-size: contain;
+  border: 2px solid var(--main-color);
+}
+
+.understable {
+  font-size: 16px;
+  background-image: url('../../images/understable.jpg');
+  background-position: center;
+  background-size: contain;
+  border: 2px solid var(--main-color);
+}
+
+.flex {
+  font-size: 16px;
+  background-image: url('../../images/flex.jpg');
+  background-position: center;
+  background-size: contain;
+  border: 2px solid var(--main-color);
+}
