@@ -14,7 +14,8 @@ export default class LandingPage extends React.Component {
             With DiscCaddy you can create scorecards, view scorecards from previous rounds,
             and add the discs you own to your DiscCaddy bag to get recommendations about which of your discs is best suited for your current shot.
           </p>
-          <p>Sign in or Sign up to get started!</p>
+          <p>Sign in or Sign Up to get started!</p>
+          <p className='LandingPage__small'>Or check out the demo on the Sign Up page</p>
           <Link className='LandingPage__link' to='/login'>Sign in / Sign up</Link>
         </div>
       </section>

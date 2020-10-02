@@ -21,6 +21,10 @@
   padding: 0 10px;
 }
 
+.LandingPage__small {
+  font-size: 12px;
+}
+
 .LandingPage__link {
   display: block;
   max-width: 320px;
@@ -38,4 +42,19 @@
   background-color: var(--main-color);
   color: rgb(255, 255, 255);
   text-shadow: var(--black-stroke);
+}
+
+@media all and (min-width: 530px) {
+  .LandingPage__text {
+    padding: 50px;
+    font-size: 20px;
+  }
+
+  .LandingPage p {
+    margin-bottom: 50px;
+  }
+
+  .LandingPage__small {
+    font-size: 16px;
+  }
 }
